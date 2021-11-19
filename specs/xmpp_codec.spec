@@ -2,7 +2,15 @@
 -record(text, {lang = <<>> :: binary(),
                data = <<>> :: binary()}).
 -type text() :: #text{}.
-
+-xml(more,
+     #elem{name = <<"more">>,
+        xmlns = <<"urn:xmpp:vms-msg.custom">>,
+        module = 'more',
+        result = {more, '$type','$date','$nick','$attachment_id','$filesize','$filename','$mime'},
+        attrs = [#attr{name = <<"type">>},#attr{name = <<"date">>},
+                 #attr{name = <<"nick">>},#attr{name = <<"attachment_id">>},
+                 #attr{name = <<"filesize">>},#attr{name = <<"filename">>},
+                 #attr{name = <<"mime">>}]}).
 -xml(jidprep,
      #elem{name = <<"jid">>,
 	   xmlns = <<"urn:xmpp:jidprep:0">>,
